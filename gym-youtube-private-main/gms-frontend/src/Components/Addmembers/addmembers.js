@@ -46,7 +46,7 @@ const Addmembers = () => {
   }
 
   const fetchMembership = async()=>{
-    await axios.get('http://localhost:4000/plans/get-membership',{withCredentials:true}).then((response)=>{
+    await axios.get('https://gymmanager-fjgs.onrender.com/get-membership',{withCredentials:true}).then((response)=>{
 
       setMembershipList(response.data.membership)
       if(response.data.membership.length===0){
@@ -79,7 +79,7 @@ const Addmembers = () => {
   };
 
   const handleRegisterButton=async()=>{
-    await axios.post('http://localhost:4000/members/register-member',inputField,{withCredentials:true}).then((res)=>{
+    await axios.post('https://gymmanager-fjgs.onrender.com/members/register-member',inputField,{withCredentials:true}).then((res)=>{
       toast.success("Added SuccessFully");
       setTimeout(()=>{
         window.location.reload();
