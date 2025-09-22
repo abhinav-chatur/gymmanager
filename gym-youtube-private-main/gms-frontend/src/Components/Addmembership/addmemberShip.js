@@ -12,7 +12,7 @@ const AddmemberShip = ({handleClose}) => {
     }
 
     const fetchMembership = async () => {
-        await axios.get('http://localhost:4000/plans/get-membership', { withCredentials: true }).then((res) => {
+        await axios.get('https://gymmanager-fjgs.onrender.com/plans/get-membership', { withCredentials: true }).then((res) => {
             console.log(res);
             setMembership(res.data.membership)
             toast.success(res.data.membership.length+" Membership Fetched")
@@ -27,7 +27,7 @@ const AddmemberShip = ({handleClose}) => {
     }, [])
 
     const handleAddmembership = async()=>{
-        await axios.post('http://localhost:4000/plans/add-membership',inputField,{ withCredentials: true }).then((response=>{
+        await axios.post('https://gymmanager-fjgs.onrender.com/plans/add-membership',inputField,{ withCredentials: true }).then((response=>{
             toast.success(response.data.message)
             handleClose();
         })).catch(err => {
